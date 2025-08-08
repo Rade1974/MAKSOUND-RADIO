@@ -3,129 +3,114 @@
 <html lang="mk">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MAKSOUND RADIO - 2004</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MAKSOUND RADIO-2004</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background: url('assets/default.png') no-repeat center center fixed;
+      background: url('background.png') no-repeat center center fixed;
       background-size: cover;
       color: white;
     }
     header {
-      backdrop-filter: blur(10px);
-      background: rgba(0, 0, 0, 0.5);
-      padding: 1rem 2rem;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 10px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    header img {
-      height: 50px;
-    }
     nav a {
-      margin-left: 20px;
+      margin: 0 15px;
       color: white;
       text-decoration: none;
       font-weight: bold;
     }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .content {
-      text-align: center;
-      padding: 4rem 2rem;
-    }
-    .content h1 {
-      font-size: 2.5rem;
-    }
     .lang-toggle {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: rgba(255, 255, 255, 0.2);
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
       cursor: pointer;
+    }
+    .container {
+      text-align: center;
+      padding: 50px 20px;
+    }
+    .logo {
+      width: 250px;
+      max-width: 100%;
     }
     .audio-player {
-      margin-top: 2rem;
+      margin: 20px auto;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 15px;
+      border-radius: 10px;
+      width: 300px;
     }
-    .footer {
-      text-align: center;
-      padding: 2rem;
-      background: rgba(0, 0, 0, 0.5);
-      position: absolute;
-      width: 100%;
-      bottom: 0;
-    }
-    button {
-      margin-top: 1rem;
-      background-color: gold;
+    iframe {
       border: none;
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-      border-radius: 5px;
+    }
+    .section {
+      padding: 40px 20px;
+      background-color: rgba(0,0,0,0.5);
+      margin: 20px auto;
+      max-width: 800px;
+      border-radius: 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      background-color: rgba(0, 0, 0, 0.5);
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="assets/cover.png" alt="MAKSOUND RADIO Logo" />
+    <div>
+      <a href="#" class="lang-toggle" onclick="toggleLang()">🇲🇰 / 🇬🇧</a>
+    </div>
     <nav>
-      <a href="#home" data-i18n="home">Дома</a>
-      <a href="#about" data-i18n="about">За нас</a>
-      <a href="#contact" data-i18n="contact">Контакт</a>
+      <a href="#live" data-mk="Во живо" data-en="Live">Во живо</a>
+      <a href="#chat" data-mk="Чат" data-en="Chat">Чат</a>
+      <a href="#podcast" data-mk="Програма" data-en="Program">Програма</a>
       <a href="https://www.buymeacoffee.com/" target="_blank">☕ Buy me a coffee</a>
     </nav>
-    <div class="lang-toggle" onclick="toggleLanguage()">EN</div>
   </header>
 
-  <div class="content" id="home">
-    <h1 data-i18n="welcome">Добредојдовте на MAKSOUND RADIO - 2004</h1>
-    <p data-i18n="desc">Онлајн радио за македонска музичка, културна и општествена содржина.</p>
-    <div class="audio-player">
-      <audio controls>
+  <div class="container">
+    <img src="cover.png" alt="MAKSOUND Logo" class="logo" />
+    <div class="audio-player" id="live">
+      <audio controls autoplay>
         <source src="https://a12.asurahosting.com/listen/maksound_radio-2004/radio.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
     </div>
   </div>
 
-  <div class="footer" id="contact">
-    <p>Email: maksound2004@outlook.com</p>
-    <p>© 2025 MAKSOUND RADIO - 2004</p>
+  <div class="section" id="chat">
+    <h2 data-mk="Чат во живо" data-en="Live Chat">Чат во живо</h2>
+    <iframe src="https://tlk.io/maksoundradio" width="100%" height="400"></iframe>
   </div>
 
-  <script>
-    const translations = {
-      mk: {
-        home: "Дома",
-        about: "За нас",
-        contact: "Контакт",
-        welcome: "Добредојдовте на MAKSOUND RADIO - 2004",
-        desc: "Онлајн радио за македонска музичка, културна и општествена содржина."
-      },
-      en: {
-        home: "Home",
-        about: "About",
-        contact: "Contact",
-        welcome: "Welcome to MAKSOUND RADIO - 2004",
-        desc: "Online radio promoting Macedonian music, culture, and society."
-      }
-    };
+  <div class="section" id="podcast">
+    <h2 data-mk="Програма во живо / Подкаст" data-en="Live Program / Podcast">Програма во живо / Подкаст</h2>
+    <iframe src="https://open.spotify.com/embed/show/3y4Y6aPAk8mlF6jw5ZZ4iU?utm_source=generator" width="100%" height="232" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+  </div>
 
-    let currentLang = "mk";
-    function toggleLanguage() {
-      currentLang = currentLang === "mk" ? "en" : "mk";
-      document.querySelector(".lang-toggle").textContent = currentLang === "mk" ? "EN" : "MK";
-      document.querySelectorAll("[data-i18n]").forEach(el => {
-        const key = el.getAttribute("data-i18n");
-        el.textContent = translations[currentLang][key];
+  <footer>
+    &copy; 2025 MAKSOUND RADIO-2004
+  </footer>
+
+  <script>
+    function toggleLang() {
+      const elements = document.querySelectorAll('[data-mk]');
+      elements.forEach(el => {
+        const mk = el.getAttribute('data-mk');
+        const en = el.getAttribute('data-en');
+        if (el.textContent === mk) {
+          el.textContent = en;
+        } else {
+          el.textContent = mk;
+        }
       });
     }
   </script>

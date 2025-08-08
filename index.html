@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAKSOUND RADIO-2004</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #121212;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      padding: 20px;
+      background-color: #1f1f1f;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav button {
+      background-color: #444;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+    section {
+      padding: 30px 15px;
+    }
+    audio {
+      width: 90%;
+      max-width: 400px;
+      margin: 20px auto;
+      display: block;
+    }
+    footer {
+      background-color: #1f1f1f;
+      padding: 15px;
+      font-size: 0.9em;
+    }
+    a {
+      color: #1e90ff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>MAKSOUND RADIO-2004</h1>
+    <nav>
+      <button onclick="setLanguage('mk')">MK</button>
+      <button onclick="setLanguage('en')">EN</button>
+    </nav>
+  </header>
+
+  <section>
+    <p id="description">
+      Online Радио за презентирање на македонската музичка, културна и општествена култура
+    </p>
+    <audio controls>
+      <source src="https://a12.asurahosting.com/listen/maksound_radio-2004/radio.mp3" type="audio/mpeg">
+      Вашиот прелистувач не поддржува HTML5 аудио.
+    </audio>
+  </section>
+
+  <section>
+    <p><strong>Email:</strong> <a href="mailto:maksound2004@outlook.com">maksound2004@outlook.com</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 MAKSOUND RADIO-2004. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const translations = {
+      mk: {
+        description: "Online Радио за презентирање на македонската музичка, културна и општествена култура",
+        emailLabel: "Email:"
+      },
+      en: {
+        description: "Online radio presenting Macedonian musical, cultural and social heritage",
+        emailLabel: "Email:"
+      }
+    };
+
+    function setLanguage(lang) {
+      document.getElementById('description').innerText = translations[lang].description;
+    }
+  </script>
+</body>
+</html>

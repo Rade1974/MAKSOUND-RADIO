@@ -1,86 +1,113 @@
-
 <!DOCTYPE html>
 <html lang="mk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MAKSOUND RADIO</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAKSOUNDRADIO-2004</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
     body {
-      background-image: url("default.png");
+      background-image: url('default.png');
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
-      font-family: "Segoe UI", sans-serif;
+      background-attachment: fixed;
       color: white;
       text-align: center;
-      padding: 40px 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
-
-    header {
-      margin-bottom: 40px;
+    .overlay {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 2rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
-
-    .logo {
-      max-width: 300px;
+    header img {
+      max-width: 200px;
       margin-bottom: 20px;
     }
-
     h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
     }
-
-    p {
-      font-size: 20px;
-      margin-top: 0;
+    h2 {
+      font-weight: 400;
+      margin-bottom: 1rem;
     }
-
-    audio {
-      margin-top: 30px;
-      width: 80%;
-      max-width: 400px;
-      height: 40px;
+    nav {
+      margin-top: 1rem;
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
     }
-
+    nav a {
+      color: #FFD700;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .player-container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      margin: 2rem 0;
+    }
     footer {
-      margin-top: 60px;
-      font-size: 14px;
-      color: #ccc;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 1rem;
+      font-size: 0.9rem;
     }
-
-    .contact {
-      margin-top: 10px;
+    .donate {
+      margin-top: 1rem;
     }
-
+    .donate a {
+      background: #ffdd00;
+      color: black;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
     @media (max-width: 600px) {
-      h1 {
-        font-size: 32px;
-      }
-
-      p {
-        font-size: 16px;
-      }
+      h1 { font-size: 1.8rem; }
+      .player-container { width: 90%; }
     }
   </style>
 </head>
 <body>
-  <img src="cover.png" alt="MAKSOUND RADIO Logo" class="logo" />
-  <header>
-    <h1>🎵 MAKSOUND RADIO</h1>
-    <p>Презентација на македонската музичка, културна и општествена култура</p>
-  </header>
+  <div class="overlay">
+    <header>
+      <img src="cover.png" alt="MAKSOUND Radio Logo">
+      <h1>MAKSOUNDRADIO-2004</h1>
+      <h2>Онлајн радио за македонска музика, култура и општество</h2>
+      <nav>
+        <a href="#">Дома</a>
+        <a href="#">За Нас</a>
+        <a href="#">Контакт</a>
+        <a href="https://www.buymeacoffee.com/" target="_blank">Buy me a coffee</a>
+      </nav>
+    </header>
 
-  <audio controls autoplay>
-    <source src="https://a12.asurahosting.com/listen/maksound_radio-2004/radio.mp3" type="audio/mpeg">
-    Вашиот прелистувач не поддржува аудио плеер.
-  </audio>
+    <div class="player-container">
+      <audio controls autoplay>
+        <source src="https://a12.asurahosting.com/listen/maksound_radio-2004/radio.mp3" type="audio/mpeg">
+        Вашиот прелистувач не поддржува аудио плеер.
+      </audio>
+    </div>
+  </div>
 
   <footer>
-    <div class="contact">
-      Контакт: <a href="mailto:maksound2004@outlook.com" style="color:#ccc;">maksound2004@outlook.com</a>
-    </div>
-    <div>© 2004–2025 MAKSOUND RADIO</div>
+    Контакт: maksound2004@outlook.com<br>
+    &copy; 2004 - 2025 MAKSOUNDRADIO-2004. Сите права се задржани.
   </footer>
 </body>
 </html>

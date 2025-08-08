@@ -1,99 +1,80 @@
+
 <!DOCTYPE html>
 <html lang="mk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MAKSOUND RADIO-2004</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MAKSOUND RADIO</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #121212;
-      color: #fff;
-      margin: 0;
-      padding: 0;
+      background-image: url("default.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: "Segoe UI", sans-serif;
+      color: white;
       text-align: center;
+      padding: 40px 20px;
     }
+
     header {
-      padding: 20px;
-      background-color: #1f1f1f;
+      margin-bottom: 40px;
     }
+
     h1 {
-      margin: 0;
-      font-size: 2em;
+      font-size: 48px;
+      margin-bottom: 10px;
     }
-    nav {
+
+    p {
+      font-size: 20px;
+      margin-top: 0;
+    }
+
+    audio {
+      margin-top: 30px;
+      width: 80%;
+      max-width: 400px;
+      height: 40px;
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    .contact {
       margin-top: 10px;
     }
-    nav button {
-      background-color: #444;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      margin: 0 5px;
-      cursor: pointer;
-    }
-    section {
-      padding: 30px 15px;
-    }
-    audio {
-      width: 90%;
-      max-width: 400px;
-      margin: 20px auto;
-      display: block;
-    }
-    footer {
-      background-color: #1f1f1f;
-      padding: 15px;
-      font-size: 0.9em;
-    }
-    a {
-      color: #1e90ff;
-      text-decoration: none;
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 32px;
+      }
+
+      p {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>MAKSOUND RADIO-2004</h1>
-    <nav>
-      <button onclick="setLanguage('mk')">MK</button>
-      <button onclick="setLanguage('en')">EN</button>
-    </nav>
+    <h1>🎵 MAKSOUND RADIO</h1>
+    <p>Презентација на македонската музичка, културна и општествена култура</p>
   </header>
 
-  <section>
-    <p id="description">
-      Online Радио за презентирање на македонската музичка, културна и општествена култура
-    </p>
-    <audio controls>
-      <source src="https://a12.asurahosting.com/listen/maksound_radio-2004/radio.mp3" type="audio/mpeg">
-      Вашиот прелистувач не поддржува HTML5 аудио.
-    </audio>
-  </section>
-
-  <section>
-    <p><strong>Email:</strong> <a href="mailto:maksound2004@outlook.com">maksound2004@outlook.com</a></p>
-  </section>
+  <audio controls autoplay>
+    <source src="https://a12.asurahosting.com/listen/maksound_radio-2004/radio.mp3" type="audio/mpeg">
+    Вашиот прелистувач не поддржува аудио плеер.
+  </audio>
 
   <footer>
-    <p>&copy; 2025 MAKSOUND RADIO-2004. All rights reserved.</p>
+    <div class="contact">
+      Контакт: <a href="mailto:maksound2004@outlook.com" style="color:#ccc;">maksound2004@outlook.com</a>
+    </div>
+    <div>© 2004–2025 MAKSOUND RADIO</div>
   </footer>
-
-  <script>
-    const translations = {
-      mk: {
-        description: "Online Радио за презентирање на македонската музичка, културна и општествена култура",
-        emailLabel: "Email:"
-      },
-      en: {
-        description: "Online radio presenting Macedonian musical, cultural and social heritage",
-        emailLabel: "Email:"
-      }
-    };
-
-    function setLanguage(lang) {
-      document.getElementById('description').innerText = translations[lang].description;
-    }
-  </script>
 </body>
 </html>

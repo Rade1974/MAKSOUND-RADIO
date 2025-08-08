@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MAKSOUND RADIO-2004</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: url('background.png') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+    header {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 10px 15px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav {
+      flex: 1 1 100%;
+      text-align: center;
+      margin-top: 10px;
+    }
+    nav a {
+      margin: 5px 10px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+    }
+    .lang-toggle { cursor: pointer; }
+    .container {
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .logo {
+      width: 200px;
+      max-width: 80%;
+    }
+    .audio-player {
+      margin: 20px auto;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 10px;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 350px;
+    }
+    iframe {
+      width: 100%;
+      border: none;
+    }
+    .section {
+      padding: 30px 15px;
+      background-color: rgba(0,0,0,0.5);
+      margin: 20px auto;
+      max-width: 90%;
+      border-radius: 10px;
+    }
+    .socials {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .socials a {
+      margin: 0 10px;
+      display: inline-block;
+    }
+    .socials img {
+      width: 32px;
+      height: 32px;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 0.85em;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <a href="#" class="lang-toggle" onclick="toggleLang()">🇲🇰 / 🇬🇧</a>
+    </div>
+    <nav>
+      <a href="#live" data-mk="Во живо" data-en="Live">Во живо</a>
+      <a href="#chat" data-mk="Чат" data-en="Chat">Чат</a>
+      <a href="#podcast" data-mk="Програма" data-en="Program">Програма</a>
+      <a href="https://www.buymeacoffee.com/" target="_blank">☕</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <img src="cover.png" alt="MAKSOUND Logo" class="logo" />
+    <div class="audio-player" id="live">
+      <audio controls autoplay>
+        <source src="https://a12.asurahosting.com/listen/maksound_radio-2004/radio.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </div>
+
+  <div class="section" id="chat">
+    <h2 data-mk="Чат во живо" data-en="Live Chat">Чат во живо</h2>
+    <iframe src="https://tlk.io/maksoundradio" height="300"></iframe>
+  </div>
+
+  <div class="section" id="podcast">
+    <h2 data-mk="Програма во живо / Подкаст" data-en="Live Program / Podcast">Програма во живо / Подкаст</h2>
+    <iframe src="https://open.spotify.com/embed/show/3y4Y6aPAk8mlF6jw5ZZ4iU?utm_source=generator" height="232" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+  </div>
+
+  <div class="socials">
+    <a href="https://www.youtube.com/@yourchannel" target="_blank">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" alt="YouTube">
+    </a>
+    <a href="https://www.tiktok.com/@yourprofile" target="_blank">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/tiktok--v1.png" alt="TikTok">
+    </a>
+  
+    <a href="https://www.facebook.com/yourpage" target="_blank">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png" alt="Facebook">
+    </a>
+  </div>
+
+  <footer>
+    &copy; 2025 MAKSOUND RADIO-2004
+  </footer>
+
+  <script>
+    function toggleLang() {
+      const elements = document.querySelectorAll('[data-mk]');
+      elements.forEach(el => {
+        const mk = el.getAttribute('data-mk');
+        const en = el.getAttribute('data-en');
+        if (el.textContent === mk) {
+          el.textContent = en;
+        } else {
+          el.textContent = mk;
+        }
+      });
+    }
+  </script>
+</body>
+</html>
